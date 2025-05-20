@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Print the Fibonacci Sequence</h1>
+    <script>
+      const number = parseInt(prompt("Enter the number of terms: "));
+      let n1 = 0,
+        n2 = 1,
+        nexTerm;
+      for (let i = 1; i <= number; i++) {
+        console.log(n1);
+        nexTerm = n1 + n2;
+        n1 = n2;
+        n2 = nexTerm;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Get Random Item From an Array</h1>
+    <script>
+      function getRandomItem(arr) {
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        const item = arr[randomIndex];
+
+        return item;
+      }
+
+      const array = [1, "hello", 5, 8];
+      const result = getRandomItem(array);
+      console.log(result);
+    </script>
+  </body>
+</html>

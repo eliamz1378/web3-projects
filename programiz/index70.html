@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Append an Object to an Array</h1>
+
+    <script>
+      function insertObject(arr, obj) {
+        let index = arr.length;
+        arr.splice(index, 0, obj);
+        console.log(arr);
+      }
+      let array = [1, 2, 3];
+      let object = { x: 12, y: 8 };
+      insertObject(array, object);
+    </script>
+  </body>
+</html>

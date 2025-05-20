@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>بلاگ با Isotope</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        direction: rtl;
+        padding: 20px;
+        background: #f9f9f9;
+      }
+      #filters {
+        margin-bottom: 20px;
+      }
+      #filters button {
+        margin-left: 10px;
+        padding: 8px 16px;
+        border: none;
+        background-color: #ddd;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+      #filters button:hover,
+      #filters button.is-checked {
+        background-color: #34d399;
+        color: white;
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .blog-item {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: calc(33.333% - 10.66px);
+        box-sizing: border-box;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        padding: 8px;
+        border: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .blog-item:hover {
+        border-color: #6c63ff;
+      }
+      .blog-item img {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        display: block;
+        object-fit: cover;
+        height: 150px;
+      }
+      .blog-item p {
+        margin: 8px 0;
+        font-size: 14px;
+        color: #333;
+        line-height: 1.3;
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .blog-item .date {
+        font-size: 12px;
+        color: #34d399;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- دکمه‌های فیلتر -->
+    <div id="filters" class="button-group">
+      <button class="is-checked" data-filter="*">همه</button>
+      <button data-filter=".category-tech">تکنولوژی</button>
+      <button data-filter=".category-life">زندگی</button>
+      <button data-filter=".category-travel">سفر</button>
+    </div>
+
+    <!-- گرید بلاگ -->
+    <div class="grid">
+      <!-- کارت دسته تکنولوژی -->
+      <div class="blog-item category-tech">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="assets/images/blog/blog1.jpg"
+            alt="مزایا و معایب گوشی‌های سری گلکسی S21"
+          />
+          <p>مزایا و معایب گوشی‌های سری گلکسی S21</p>
+          <p class="date">29 / شهریور / 1403</p>
+        </a>
+      </div>
+
+      <!-- کارت دسته زندگی -->
+      <div class="blog-item category-life">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="./assets/images/blog/blog2.jpg"
+            alt="۱۰ نکته برای داشتن زندگی سالم‌تر"
+          />
+          <p>۱۰ نکته برای داشتن زندگی سالم‌تر</p>
+          <p class="date">15 / مهر / 1403</p>
+        </a>
+      </div>
+
+      <!-- کارت دسته سفر -->
+      <div class="blog-item category-travel">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="assets/images/products/p1.png"
+            alt="راهنمای سفر به شمال ایران"
+          />
+          <p>راهنمای سفر به شمال ایران</p>
+          <p class="date">2 / آبان / 1403</p>
+        </a>
+      </div>
+
+      <!-- چند کارت بیشتر  -->
+
+      <div class="blog-item category-tech">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="assets/images/products/p2.png"
+            alt="جدیدترین گجت‌های سال ۱۴۰۳"
+          />
+          <p>جدیدترین گجت‌های سال ۱۴۰۳</p>
+          <p class="date">5 / آذر / 1403</p>
+        </a>
+      </div>
+
+      <div class="blog-item category-life">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="assets/images/products/p3.png"
+            alt="مدیریت استرس در زندگی روزمره"
+          />
+          <p>مدیریت استرس در زندگی روزمره</p>
+          <p class="date">10 / دی / 1403</p>
+        </a>
+      </div>
+
+      <div class="blog-item category-travel">
+        <a
+          href="./blog-detail.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="assets/images/products/p4.png"
+            alt="بهترین مقصدهای پاییزی ایران"
+          />
+          <p>بهترین مقصدهای پاییزی ایران</p>
+          <p class="date">22 / آبان / 1403</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Isotope JS-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var grid = document.querySelector(".grid");
+        var iso = new Isotope(grid, {
+          itemSelector: ".blog-item",
+          layoutMode: "fitRows",
+        });
+
+        var filtersElem = document.querySelector("#filters");
+        filtersElem.addEventListener("click", function (event) {
+          if (!event.target.matches("button")) return;
+
+          var filterValue = event.target.getAttribute("data-filter");
+          iso.arrange({ filter: filterValue });
+
+          filtersElem.querySelectorAll("button").forEach(function (btn) {
+            btn.classList.remove("is-checked");
+          });
+          event.target.classList.add("is-checked");
+        });
+      });
+    </script>
+  </body>
+</html>

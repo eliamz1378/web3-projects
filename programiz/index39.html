@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      JavaScript Program to Convert the First Letter of a String into UpperCase
+    </h1>
+
+    <script>
+      function capitalizeFirstLetter(str) {
+        const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+
+        return capitalized;
+      }
+
+      const string = prompt("Enter a string: ");
+      const result = capitalizeFirstLetter(string);
+      console.log(result);
+    </script>
+  </body>
+</html>
