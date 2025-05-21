@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حذف آیتم از لیست</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+      li {
+        background-color: lightcoral;
+        padding: 15px;
+        margin: 20px;
+        text-align: center;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="itemList">
+      <li>آیتم1</li>
+      <li>آیتم2</li>
+      <li>آیتم3</li>
+      <li>آیتم4</li>
+    </ul>
+    <script>
+      $(document).ready(function () {
+        $("#itemList li").click(function () {
+          $(this).remove();
+        });
+      });
+    </script>
+  </body>
+</html>

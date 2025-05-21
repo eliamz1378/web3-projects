@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نمایش متن با دکمه</title>
+    <style>
+      #hiddenTxt {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="showTxt">محتوا را نمایش بده</button>
+    <p id="hiddenTxt">محتوای پنهان نمایش داده شد</p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#showTxt").click(function () {
+          $("#hiddenTxt").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>

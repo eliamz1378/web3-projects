@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرم با ریست و پیام موفقیت</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">نام:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="phone">تلفن:</label>
+      <input type="text" id="phone" name="phone" required /><br /><br />
+
+      <button type="submit">ارسال</button>
+    </form>
+
+    <div
+      id="successMessage"
+      style="display: none; color: green; margin-top: 20px"
+    >
+      فرم با موفقیت ارسال شد!
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#myForm").submit(function (event) {
+          event.preventDefault();
+
+          $("#successMessage").show();
+
+          $(this)[0].reset();
+        });
+      });
+    </script>
+  </body>
+</html>

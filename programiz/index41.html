@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Remove a Property from an Object</h1>
+
+    <script>
+      const student = {
+        name: "John",
+        age: 20,
+        hobbies: ["reading", "games", "coding"],
+        greet: function () {
+          console.log("Hello everyone.");
+        },
+        score: {
+          maths: 90,
+          science: 80,
+        },
+      };
+
+      delete student.greet;
+      delete student["score"];
+      console.log(student);
+    </script>
+  </body>
+</html>

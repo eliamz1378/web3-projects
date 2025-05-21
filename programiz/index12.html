@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Find the Largest Among Three Numbers</h1>
+
+    <script>
+      const a = parseFloat(prompt("Enter first number: "));
+      const b = parseFloat(prompt("Enter second number: "));
+      const c = parseFloat(prompt("Enter third number: "));
+      let result;
+      function largestNum(a, b, c) {
+        if (b >= a && b >= c) {
+          result = b;
+        } else if (c >= a && c >= b) {
+          result = c;
+        } else {
+          result = a;
+        }
+      }
+      largestNum(a, b, c);
+      console.log(result);
+    </script>
+  </body>
+</html>

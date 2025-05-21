@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اعتبارسنجی شماره تلفن</title>
+    <style>
+      #error-message {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="phoneForm">
+      <label for="phone">تلفن:</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        placeholder="تلفن خود را وارد کنید"
+      />
+      <span id="error-message">لطفاً فقط عدد وارد کنید.</span>
+      <button type="submit">ارسال</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#phoneForm").submit(function (event) {
+          event.preventDefault();
+
+          var phone = $("#phone").val();
+
+          if (/^\d+$/.test(phone)) {
+            alert("فرم با موفقیت ارسال شد!");
+            $("#error-message").hide();
+          } else {
+            $("#error-message").show();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

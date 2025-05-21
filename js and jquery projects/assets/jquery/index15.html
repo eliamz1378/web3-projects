@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fade In / Fade Out</title>
+    <style>
+      #img {
+        width: 500px;
+        display: none;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      .allContent {
+        text-align: center;
+      }
+      .allContent button {
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        margin: 0 10px;
+      }
+      .content {
+        height: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="allContent">
+      <div class="content">
+        <img src="../image/free-nature-images.jpg" alt="" srcset="" id="img" />
+      </div>
+      <button id="show">تصویر را نشان بده</button>
+      <button id="hide">تصویر را پنهان کن</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#show").click(function () {
+          $("#img").fadeIn();
+        });
+        $("#hide").click(function () {
+          $("#img").fadeOut();
+        });
+      });
+    </script>
+  </body>
+</html>

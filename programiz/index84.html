@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Get File Extension</h1>
+    <script>
+      function getFileExtension(filename) {
+        const extension = filename.split(".").pop();
+        return extension;
+      }
+      const result1 = getFileExtension("module.js");
+      console.log(result1);
+      const result2 = getFileExtension("module.txt");
+      console.log(result2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فعال کردن دکمه ارسال</title>
+  </head>
+  <body>
+    <label>
+      <input type="checkbox" id="agreeCheckbox" /> قوانین را قبول دارم</label
+    >
+    <br />
+    <button id="submitButton" disabled>ارسال</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#agreeCheckbox").on("change", function () {
+          if ($(this).prop("checked")) {
+            $("#submitButton").prop("disabled", false);
+          } else {
+            $("#submitButton").prop("disabled", true);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

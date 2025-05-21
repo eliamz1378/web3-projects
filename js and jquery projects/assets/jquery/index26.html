@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرم چند مرحله‌ای</title>
+    <style>
+      .step {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="multiStepForm">
+      <!-- مرحله 1 -->
+      <div class="step active" id="step1">
+        <h2>مرحله 1: اطلاعات شخصی</h2>
+        <label for="name">نام:</label>
+        <input type="text" id="name" name="name" required />
+        <button type="button" id="next1">بعدی</button>
+      </div>
+
+      <!-- مرحله 2 -->
+      <div class="step" id="step2">
+        <h2>مرحله 2: اطلاعات تماس</h2>
+        <label for="email">ایمیل:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="button" id="next2">بعدی</button>
+      </div>
+
+      <!-- مرحله 3 -->
+      <div class="step" id="step3">
+        <h2>مرحله 3: تایید اطلاعات</h2>
+        <p>نام: <span id="confirmName"></span></p>
+        <p>ایمیل: <span id="confirmEmail"></span></p>
+        <button type="submit">ارسال فرم</button>
+      </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#next1").click(function () {
+          var name = $("#name").val();
+          if (name) {
+            $("#step1").removeClass("active");
+            $("#step2").addClass("active");
+          } else {
+            alert("لطفاً نام خود را وارد کنید.");
+          }
+        });
+
+        $("#next2").click(function () {
+          var email = $("#email").val();
+          if (email) {
+            $("#step2").removeClass("active");
+            $("#step3").addClass("active");
+
+            $("#confirmName").text($("#name").val());
+            $("#confirmEmail").text($("#email").val());
+          } else {
+            alert("لطفاً ایمیل خود را وارد کنید.");
+          }
+        });
+
+        $("#multiStepForm").submit(function (event) {
+          event.preventDefault();
+          alert("فرم ارسال شد!");
+        });
+      });
+    </script>
+  </body>
+</html>

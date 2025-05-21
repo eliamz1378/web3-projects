@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>اعتبارسنجی ایمیل</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form id="emailForm">
+      <input type="text" id="email" placeholder="ایمیل خود را وارد کنید" />
+      <button type="submit">ارسال</button>
+      <p id="error" style="color: red"></p>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#emailForm").submit(function (e) {
+          e.preventDefault();
+
+          let email = $("#email").val().trim();
+          let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (email === "") {
+            $("#error").text("لطفاً ایمیل را وارد کنید.");
+          } else if (!emailRegex.test(email)) {
+            $("#error").text("ایمیل معتبر نیست.");
+          } else {
+            $("#error").text("");
+            alert("ایمیل با موفقیت ارسال شد!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

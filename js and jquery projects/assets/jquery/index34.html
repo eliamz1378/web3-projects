@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مرتب‌سازی لیست الفبایی</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 8px;
+        background-color: #f4f4f4;
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="sortButton">مرتب‌سازی لیست الفبایی</button>
+
+    <ul id="myList">
+      <li>پرتقال</li>
+      <li>سیب</li>
+      <li>موز</li>
+      <li>گیلاس</li>
+      <li>گلابی</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#sortButton").click(function () {
+          var listItems = $("#myList li").get();
+
+          listItems.sort(function (a, b) {
+            var textA = $(a).text().toUpperCase();
+            var textB = $(b).text().toUpperCase();
+            return textA.localeCompare(textB);
+          });
+          $.each(listItems, function (i, li) {
+            $("#myList").append(li);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

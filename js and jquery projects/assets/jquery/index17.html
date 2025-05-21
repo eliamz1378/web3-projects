@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>انیمیشن Slide</title>
+    <style>
+      #myDiv {
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 200px;
+        border: 2px solid #000;
+        display: none;
+        margin-top: 20px;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleButton">نمایش/ پنهان کردن</button>
+    <div id="myDiv">نمایش محتوا</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#toggleButton").click(function () {
+          $("#myDiv").slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

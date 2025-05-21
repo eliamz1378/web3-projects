@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>افزودن و حذف کلاس با jQuery</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        padding: 10px;
+        border: 1px solid orange;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="myText">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, natus?
+    </p>
+    <button id="toggleBtn">افزودن / حذف بک گراند</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#toggleBtn").click(function () {
+          $("#myText").addClass("highlight");
+          setTimeout(function () {
+            $("#myText").removeClass("highlight");
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>

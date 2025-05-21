@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منوی کشویی</title>
+    <style>
+      #menu {
+        display: none;
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu li {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+
+      #menu li:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown-title {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <div class="dropdown-title">منوی کشویی</div>
+      <ul id="menu">
+        <li>آیتم 1</li>
+        <li>آیتم 2</li>
+        <li>آیتم 3</li>
+        <li>آیتم 4</li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".dropdown-title").click(function () {
+          $("#menu").slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

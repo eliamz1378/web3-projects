@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Pass a Function as Parameter</h1>
+    <script>
+      function greet() {
+        return "Hello";
+      }
+      function name(user, func) {
+        const message = func();
+
+        console.log(`${message} ${user}`);
+      }
+      name("John", greet);
+      name("Jack", greet);
+      name("Sara", greet);
+    </script>
+  </body>
+</html>

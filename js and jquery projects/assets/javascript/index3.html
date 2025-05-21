@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تایمر شمارش معکوس</title>
+  </head>
+  <body>
+    <div id="textTimer">10</div>
+    <button onclick="startTime()">شروع تایمر</button>
+
+    <script>
+      function startTime() {
+        let time = 10;
+        let timerElement = document.getElementById("textTimer");
+        let countDowm = setInterval(function () {
+          time--;
+          timerElement.innerHTML = time;
+          if (time == 0) {
+            clearInterval(countDowm);
+            alert("زمان تمام شد");
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

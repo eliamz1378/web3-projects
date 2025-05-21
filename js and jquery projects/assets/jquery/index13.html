@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تغییر سایز عکس</title>
+    <style>
+      #img {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="img" src="../image/free-nature-images.jpg" alt="" />
+    <br />
+    <button id="changeSize">تغییر سایز عکس</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#changeSize").click(function () {
+          let currentWidth = $("#img").width();
+          if (currentWidth === 200) {
+            $("#img").width(400);
+          } else {
+            $("#img").width(200);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

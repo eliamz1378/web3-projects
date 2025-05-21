@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Create Objects in Different Ways</h1>
+
+    <script>
+      const person = {
+        name: "elham",
+        age: 26,
+        hobbies: ["reading", "game", "coding"],
+        greet: function () {
+          console.log("hello everyone");
+        },
+        score: {
+          maths: 20,
+          science: 18,
+        },
+      };
+
+      console.log(typeof person);
+      console.log(person.name);
+      console.log(person.hobbies[0]);
+      person.greet();
+      console.log(person.score.maths);
+    </script>
+  </body>
+</html>

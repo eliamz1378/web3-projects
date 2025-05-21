@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    input {
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تعداد حروف تایپ شده</title>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="تایپ کن تا بگم چند حرف نوشتی" />
+    <span id="character">0</span>
+    <script>
+      let input = document.getElementById("input");
+      let counter = document.getElementById("character");
+
+      input.addEventListener("input", function () {
+        counter.innerText = input.value.length;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Sort Array of Objects by Property Values</h1>
+    <script>
+      function compareAge(a, b) {
+        return a.age - b.age;
+      }
+
+      const students = [
+        { name: "Sara", age: 24 },
+        { name: "John", age: 22 },
+        { name: "Jack", age: 27 },
+      ];
+      console.log(students.sort(compareAge));
+    </script>
+  </body>
+</html>

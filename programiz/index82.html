@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Split Array into Smaller Chunks</h1>
+    <script>
+      function splitIntoChunk(arr, chunk) {
+        for (i = 0; i < arr.length; i += chunk) {
+          let tempArray;
+          tempArray = arr.slice(i, i + chunk);
+          console.log(tempArray);
+        }
+      }
+      const array = [1, 2, 3, 4, 5, 6, 7, 8];
+      const chunk = 2;
+      splitIntoChunk(array, chunk);
+    </script>
+  </body>
+</html>

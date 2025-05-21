@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تغییر رنگ هر آیتم با کلیک</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .items {
+        background-color: lightblue;
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0px;
+        width: 100%;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items">آیتم1</div>
+      <div class="items">آیتم2</div>
+      <div class="items">آیتم3</div>
+    </div>
+
+    <script>
+      let items = document.getElementsByClassName("items");
+      for (let item of items) {
+        item.onclick = function () {
+          for (let i of items) {
+            i.style.backgroundColor = "lightblue";
+          }
+          this.style.backgroundColor = "lightgreen";
+        };
+      }
+    </script>
+  </body>
+</html>

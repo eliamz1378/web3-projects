@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Find HCF or GCD</h1>
+    <script>
+      let hcf;
+      const number1 = parseInt(prompt("please enter a first number"));
+      const number2 = parseInt(prompt("please enter a second number"));
+      for (let i = 1; i <= number1 && i <= number2; i++) {
+        if (number1 % i == 0 && number2 % i == 0) {
+          hcf = i;
+        }
+      }
+      let lcm = (number1 * number2) / hcf;
+      console.log(`LCM of ${number1},${number2} is ${lcm}`);
+    </script>
+  </body>
+</html>

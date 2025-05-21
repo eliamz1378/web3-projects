@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      JavaScript Program to Check the Number of Occurrences of a Character in
+      the String
+    </h1>
+
+    <script>
+      function countString(str, letter) {
+        const re = new RegExp(letter, "g");
+        const count = str.match(re).length;
+
+        return count;
+      }
+
+      const string = prompt("Enter a string: ");
+      const letterToCheck = prompt("Enter a letter to check: ");
+      const result = countString(string, letterToCheck);
+      console.log(result);
+    </script>
+  </body>
+</html>

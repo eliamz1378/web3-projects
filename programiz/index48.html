@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      JavaScript Program to Count the Number of Keys/Properties in an Object
+    </h1>
+    <script>
+      const student = {
+        name: "John",
+        age: 20,
+        hobbies: ["reading", "games", "coding"],
+      };
+
+      let count = 0;
+      for (let key in student) {
+        ++count;
+      }
+      console.log(count);
+    </script>
+  </body>
+</html>

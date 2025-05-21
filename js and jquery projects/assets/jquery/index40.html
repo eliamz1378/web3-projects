@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دکمه رفتن به بالا</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        height: 2000px;
+        padding: 20px;
+      }
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        display: none;
+      }
+      #scrollToTopBtn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>صفحه با محتوای طولانی</h1>
+      <p>
+        در اینجا محتوای زیادی وجود دارد که برای مشاهده دکمه "رفتن به بالا" باید
+        اسکرول کنید.
+      </p>
+      <p>اسکرول کنید و دکمه "رفتن به بالا" را ببینید.</p>
+    </div>
+
+    <button id="scrollToTopBtn">↑</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $("#scrollToTopBtn").fadeIn();
+        } else {
+          $("#scrollToTopBtn").fadeOut();
+        }
+      });
+
+      $("#scrollToTopBtn").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+        return false;
+      });
+    </script>
+  </body>
+</html>

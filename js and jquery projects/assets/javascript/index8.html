@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ساعت دیجیتال</title>
+    <style>
+      div {
+        font-size: 40px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">00 : 00 : 00</div>
+    <script>
+      function updateClock() {
+        let now = new Date();
+        let hours = now.getHours().toString().padStart(2, "0");
+        let minutes = now.getMinutes().toString().padStart(2, "0");
+        let seconds = now.getSeconds().toString().padStart(2, "0");
+        document.getElementById(
+          "clock"
+        ).innerHTML = `${hours} : ${minutes} : ${seconds}`;
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>

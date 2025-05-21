@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      .accordion {
+        width: 100%;
+        background-color: #f1f1f1;
+        padding: 18px;
+        cursor: pointer;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+      }
+
+      .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Accordion Example</h2>
+
+    <button class="accordion">بخش اول</button>
+    <div class="panel">
+      <p>محتوای بخش اول</p>
+    </div>
+
+    <button class="accordion">بخش دوم</button>
+    <div class="panel">
+      <p>محتوای بخش دوم</p>
+    </div>
+
+    <button class="accordion">بخش سوم</button>
+    <div class="panel">
+      <p>محتوای بخش سوم</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".accordion").click(function () {
+          $(".panel").slideUp();
+          if (!$(this).next().is(":visible")) {
+            $(this).next().slideDown();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

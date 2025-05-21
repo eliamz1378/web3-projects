@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>اعتبارسنجی پسورد</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <input type="password" id="password" placeholder="رمز عبور" />
+      <button type="submit">بررسی</button>
+      <p id="message" style="color: red"></p>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#form").submit(function (e) {
+          e.preventDefault();
+          const pass = $("#password").val();
+
+          if (pass.length >= 8) {
+            $("#message").text("رمز عبور معتبر است").css("color", "green");
+          } else {
+            $("#message")
+              .text("رمز عبور باید حداقل ۸ کاراکتر باشد")
+              .css("color", "red");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

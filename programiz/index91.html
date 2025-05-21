@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Check If a Variable is of Function Type</h1>
+
+    <script>
+      function testVariable(variable) {
+        if (variable instanceof Function) {
+          console.log("The variable is of function type");
+        } else {
+          console.log("The variable is not of function type");
+        }
+      }
+
+      const count = true;
+      const x = function () {
+        console.log("hello");
+      };
+      testVariable(count);
+      testVariable(x);
+    </script>
+  </body>
+</html>

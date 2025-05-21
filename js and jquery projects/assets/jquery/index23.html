@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>نمایش اطلاعات فرم</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" id="name" placeholder="نام شما" /><br /><br />
+      <input type="email" id="email" placeholder="ایمیل شما" /><br /><br />
+      <button type="submit">ارسال</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#myForm").submit(function (e) {
+          e.preventDefault();
+
+          const name = $("#name").val();
+          const email = $("#email").val();
+
+          $("#result").html(`
+          <strong>نام:</strong> ${name}<br>
+          <strong>ایمیل:</strong> ${email}
+        `);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Program to Insert Item in an Array</h1>
+    <script>
+      function insertElement() {
+        let array = [1, 2, 3, 4, 5];
+        let index = 3;
+        let element = 8;
+        array.splice(index, 0, element);
+        console.log(array);
+      }
+
+      insertElement();
+    </script>
+  </body>
+</html>

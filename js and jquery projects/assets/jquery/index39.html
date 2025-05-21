@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>افزودن نظر</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .post {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .post h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .post p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+      }
+      .comment-section {
+        margin-top: 20px;
+      }
+      .comment-section input {
+        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .add-comment-btn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .add-comment-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h2>پست اول: معرفی وبلاگ</h2>
+        <p>
+          این پست به معرفی وبلاگ من اختصاص دارد. در این وبلاگ، من به
+          اشتراک‌گذاری تجربیات خود در زمینه‌های مختلف می‌پردازم.
+        </p>
+
+        <div class="comment-section">
+          <button class="add-comment-btn">افزودن نظر</button>
+          <div id="commentsContainer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const addCommentButton = document.querySelector(".add-comment-btn");
+      const commentsContainer = document.getElementById("commentsContainer");
+      addCommentButton.addEventListener("click", function () {
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.placeholder = "نظر خود را وارد کنید...";
+        commentsContainer.appendChild(newInput);
+      });
+    </script>
+  </body>
+</html>

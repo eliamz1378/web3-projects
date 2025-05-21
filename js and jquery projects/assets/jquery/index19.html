@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>لیست ساده داینامیک</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        direction: rtl;
+        padding: 20px;
+      }
+
+      input,
+      button {
+        padding: 6px 10px;
+        margin: 5px 0;
+      }
+
+      ul {
+        padding-right: 20px;
+      }
+
+      li {
+        margin: 6px 0;
+      }
+
+      .delete-btn {
+        margin-right: 10px;
+        color: red;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>لیست خرید:</h3>
+
+    <input type="text" id="itemInput" placeholder="افزودن آیتم جدید" />
+    <button id="addItem">افزودن</button>
+
+    <ul id="itemList">
+      <li><span class="delete-btn">[حذف]</span> نان</li>
+      <li><span class="delete-btn">[حذف]</span> شیر</li>
+      <li><span class="delete-btn">[حذف]</span> تخم‌مرغ</li>
+      <li><span class="delete-btn">[حذف]</span> پنیر</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#addItem").click(function () {
+          const value = $("#itemInput").val().trim();
+          if (value !== "") {
+            $("#itemList").append(
+              `<li><span class="delete-btn">[حذف]</span> ${value}</li>`
+            );
+            $("#itemInput").val("");
+          }
+        });
+        $("#itemList").on("click", ".delete-btn", function () {
+          $(this).parent().remove();
+        });
+      });
+    </script>
+  </body>
+</html>
